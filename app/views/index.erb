@@ -1,0 +1,30 @@
+<div class="container-fluid container">
+
+  <h1>Welcome to <a href="http://www.ScheduleText.com">ScheduleText!</a></h1>
+  <p>Use the fields below to send an sms. If longer than 160 characters, it will
+    be broken across messages.</p>
+
+  <form action="/text/schedule" method="post">
+    <label for="to">To:</label>
+    <input type='tel' name='text[to]' placeholder='e.g. 123-456-7890' required>
+
+    <label for="body">Message:</label>
+    <textarea name="text[body]" placeholder="e.g. happy mother's day..."
+    rows="5" cols="30" required></textarea>
+
+    <br><br>
+
+    <label for="text[date]">Date:</label>
+    <input type="text" name="text[date]" size="10" placeholder="mm/dd/yyyy">
+
+    <label for="text[time]">Time:</label>
+    <input type="text" name="text[time]" size="10" placeholder="hh:mm ?m">
+    <label for="timezone">Timezone:</label>
+    <%= erb :_timezone_dropdown %>
+    <br><br>
+
+    <input type="submit" class='btn btn-large btn-success' value="Send later &raquo;">
+  </form>
+
+</div>
+
